@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efetividade do aluno</title>
+    <style>
+        body{
+            font: normal 14pt arial;
+        }
+        h1{
+            font: normal 16pt arial;
+            text-align: center;
+        }
+        div#main{
+            background-color: rgb(114, 184, 250);
+            height: 200px;
+            width: 400px;
+            border-radius: 10px;
+            margin-left: 400px;
+        }
+        input{
+            font: normal 10pt arial;
+            width: 80px;
+        }
+        div#result{
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Bem vindo(a) a sua calculadora de media</h1>
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="number" name="n3" id="n3">
+        <input type="button" value="Calcular" onclick="calc()">
+        <div id="result">
+            <p>Será que você passou de ano?<br>Logo veremos</p>
+        </div>
+    </div>
+    <script>
+        function calc(){
+            let n1 = document.getElementById('n1');
+            let n2 = document.getElementById('n2');
+            let n3 = document.getElementById('n3')
+            let v1 = Number(n1.value);
+            let v2 = Number(n2.value);
+            let v3 = Number(n3.value);
+            let result = document.getElementById('result');
+            let m = (v1+v2+v3)/3;
+            m>6?result.innerHTML = `A sua media é ${m.toFixed(2)} e com essa nota você foi <strong>aprovado</strong>`:result.innerHTML = `A sua media é ${m.toFixed(2)} e com essa nota você foi <strong>reprovado</strong>`
+        }
+    </script>
+</body>
+</html>
