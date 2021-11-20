@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é BR? Descubra nesse teste</title>
+</head>
+<body>
+    Informe aqui o seu país de nascimento: <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="result">
+
+    </div>
+    <script>
+        function verificar(){
+            let pais = document.getElementById('txtp');
+            let p = String(pais.value).toUpperCase();
+            window.alert(`${p}`)
+            let r = document.getElementById('result');
+            if (p == 'BRASIL'){
+                r.innerText = `Parabéns você é BR`;
+            }else{
+                r.innerText = `Felizmente você é Gringo!!`
+            }
+        }
+    </script>
+</body>
+</html>
